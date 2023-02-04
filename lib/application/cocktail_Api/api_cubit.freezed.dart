@@ -16,37 +16,12 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$ApiState {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    required TResult orElse(),
-  }) =>
+  bool get loading => throw _privateConstructorUsedError;
+  bool get error => throw _privateConstructorUsedError;
+  List<CocktailModel> get cocktails => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $ApiStateCopyWith<ApiState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -54,6 +29,8 @@ mixin _$ApiState {
 abstract class $ApiStateCopyWith<$Res> {
   factory $ApiStateCopyWith(ApiState value, $Res Function(ApiState) then) =
       _$ApiStateCopyWithImpl<$Res, ApiState>;
+  @useResult
+  $Res call({bool loading, bool error, List<CocktailModel> cocktails});
 }
 
 /// @nodoc
@@ -65,13 +42,39 @@ class _$ApiStateCopyWithImpl<$Res, $Val extends ApiState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? loading = null,
+    Object? error = null,
+    Object? cocktails = null,
+  }) {
+    return _then(_value.copyWith(
+      loading: null == loading
+          ? _value.loading
+          : loading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      error: null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as bool,
+      cocktails: null == cocktails
+          ? _value.cocktails
+          : cocktails // ignore: cast_nullable_to_non_nullable
+              as List<CocktailModel>,
+    ) as $Val);
+  }
 }
 
 /// @nodoc
-abstract class _$$_InitialCopyWith<$Res> {
+abstract class _$$_InitialCopyWith<$Res> implements $ApiStateCopyWith<$Res> {
   factory _$$_InitialCopyWith(
           _$_Initial value, $Res Function(_$_Initial) then) =
       __$$_InitialCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({bool loading, bool error, List<CocktailModel> cocktails});
 }
 
 /// @nodoc
@@ -80,84 +83,95 @@ class __$$_InitialCopyWithImpl<$Res>
     implements _$$_InitialCopyWith<$Res> {
   __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? loading = null,
+    Object? error = null,
+    Object? cocktails = null,
+  }) {
+    return _then(_$_Initial(
+      loading: null == loading
+          ? _value.loading
+          : loading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      error: null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as bool,
+      cocktails: null == cocktails
+          ? _value._cocktails
+          : cocktails // ignore: cast_nullable_to_non_nullable
+              as List<CocktailModel>,
+    ));
+  }
 }
 
 /// @nodoc
 
-class _$_Initial implements _Initial {
-  const _$_Initial();
+class _$_Initial extends _Initial {
+  const _$_Initial(
+      {required this.loading,
+      required this.error,
+      required final List<CocktailModel> cocktails})
+      : _cocktails = cocktails,
+        super._();
+
+  @override
+  final bool loading;
+  @override
+  final bool error;
+  final List<CocktailModel> _cocktails;
+  @override
+  List<CocktailModel> get cocktails {
+    if (_cocktails is EqualUnmodifiableListView) return _cocktails;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_cocktails);
+  }
 
   @override
   String toString() {
-    return 'ApiState.initial()';
+    return 'ApiState(loading: $loading, error: $error, cocktails: $cocktails)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Initial);
+        (other.runtimeType == runtimeType &&
+            other is _$_Initial &&
+            (identical(other.loading, loading) || other.loading == loading) &&
+            (identical(other.error, error) || other.error == error) &&
+            const DeepCollectionEquality()
+                .equals(other._cocktails, _cocktails));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, loading, error,
+      const DeepCollectionEquality().hash(_cocktails));
 
+  @JsonKey(ignore: true)
   @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-  }) {
-    return initial();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-  }) {
-    return initial?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-  }) {
-    return initial(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-  }) {
-    return initial?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial(this);
-    }
-    return orElse();
-  }
+  @pragma('vm:prefer-inline')
+  _$$_InitialCopyWith<_$_Initial> get copyWith =>
+      __$$_InitialCopyWithImpl<_$_Initial>(this, _$identity);
 }
 
-abstract class _Initial implements ApiState {
-  const factory _Initial() = _$_Initial;
+abstract class _Initial extends ApiState {
+  const factory _Initial(
+      {required final bool loading,
+      required final bool error,
+      required final List<CocktailModel> cocktails}) = _$_Initial;
+  const _Initial._() : super._();
+
+  @override
+  bool get loading;
+  @override
+  bool get error;
+  @override
+  List<CocktailModel> get cocktails;
+  @override
+  @JsonKey(ignore: true)
+  _$$_InitialCopyWith<_$_Initial> get copyWith =>
+      throw _privateConstructorUsedError;
 }
