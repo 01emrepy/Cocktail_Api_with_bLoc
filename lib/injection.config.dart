@@ -7,7 +7,7 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:flutter_coctail_api_with_bloc/application/cocktail_Api/api_cubit.dart'
     as _i3;
-import 'package:flutter_coctail_api_with_bloc/domain/coctail/%C4%B1_cocktail_service.dart'
+import 'package:flutter_coctail_api_with_bloc/domain/cocktail/%C4%B1_cocktail_service.dart'
     as _i4;
 import 'package:flutter_coctail_api_with_bloc/infrastructure/cocktail/cocktail_service.dart'
     as _i5;

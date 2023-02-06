@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_coctail_api_with_bloc/domain/coctail/%C4%B1_cocktail_service.dart';
-import 'package:flutter_coctail_api_with_bloc/domain/coctail/cocktail_model.dart';
+import 'package:flutter_coctail_api_with_bloc/domain/cocktail/%C4%B1_cocktail_service.dart';
+import 'package:flutter_coctail_api_with_bloc/domain/cocktail/cocktail_model.dart';
 import 'package:flutter_coctail_api_with_bloc/injection.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
