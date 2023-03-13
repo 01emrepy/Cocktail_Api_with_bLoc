@@ -19,4 +19,4 @@
           "args": ["--dart-define", "IS_DEVELOPMENT=false"]
         }
       ]
-  }
+
